@@ -3,3 +3,6 @@
 USE sql_store;
 
 SELECT * FROM customers
+
+
+SELECT * FROM customers
