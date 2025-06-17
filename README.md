@@ -31,3 +31,26 @@ SELECT * FROM customers WHERE birth_date > '1980-01-01';
 SELECT * FROM orders WHERE order_date > '2017-12-31';
 
 git push
+
+
+SELECT * 
+FROM people
+WHERE birthdate BETWEEN '1970-01-01' AND '1990-12-31';
+
+SELECT * 
+FROM people
+WHERE state IN ('VA', 'FL', 'CO');
+
+SELECT * 
+FROM people
+WHERE NOT state = 'CA';
+
+SELECT * 
+FROM people
+WHERE state = 'FL' 
+   OR state = 'TX';  
+
+SELECT * 
+FROM people
+WHERE birthdate > '1980-01-01' 
+  AND state = 'VA';
