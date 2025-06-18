@@ -1,0 +1,113 @@
+ -- CREATE SALES TABLE;
+
+CREATE DATABASE Practice;
+
+USE Practice;
+
+CREATE TABLE sales (
+sales_id INT PRIMARY KEY,
+product_id INT,
+qty_sold INT,
+sales_date DATE,
+total_price DECIMAL(10,2)
+) ;
+
+SELECT * FROM sales;
+
+
+INSERT INTO sales VALUES
+(1, 101, 5, '2024-01-01', 2500.00),
+(2, 102, 3, '2024-01-02', 900.00),
+(3, 103, 2, '2024-01-02', 60.00),
+(4, 104, 4, '2024-01-03', 80.00),
+(5, 105, 6, '2024-01-03', 90.00);
+
+DELETE FROM sales WHERE sales_id = '1'; -- it was not taking sales id 1 again in table
+
+ --  Create Products table
+ 
+ CREATE TABLE products (
+ product_id INT PRIMARY KEY,
+ product_name VARCHAR(100),
+ category VARCHAR(50),
+ unit_price DECIMAL(10, 2)
+ );
+ 
+  -- Insert sample data into Products table
+  
+INSERT INTO Products (product_id, product_name, category, unit_price) VALUES
+(101, 'Laptop', 'Electronics', 500.00),
+(102, 'Smartphone', 'Electronics', 300.00),
+(103, 'Headphones', 'Electronics', 30.00),
+(104, 'Keyboard', 'Electronics', 20.00),
+(105, 'Mouse', 'Electronics', 15.00);
+
+SELECT * FROM products;
+
+ -- Retrieve all columns from the Sales table
+ 
+SELECT * FROM sales;
+
+ -- Retrieve the product_name and unit_price from the Products table
+ 
+SELECT product_name, unit_price FROM products;
+ 
+ -- Retrieve the sale_id and sale_date from the Sales table
+ 
+ SELECT sales_id , sales_date FROM sales;
+ 
+-- Filter the Sales table to show only sales with a total_price greater than $100
+
+SELECT * FROM sales WHERE total_price > 100;
+
+-- Filter the Products table to show only products in the 'Electronics' category.
+
+SELECT * FROM products WHERE category = "Electronics";
+
+-- Retrieve the sale_id and total_price from the Sales table for sales made on January 3, 2024.
+
+SELECT sales_id , total_price FROM sales WHERE sales_date = '2024-01-03';
+
+-- Retrieve the product_id and product_name from the Products table for products with a unit_price greater than $100
+
+SELECT product_id, product_name FROM products WHERE unit_price > 100;
+
+-- Calculate the total revenue generated from all sales in the Sales table.
+
+SELECT SUM(total_price) AS revenue FROM sales; -- AS used as alias
+
+-- Calculate the average unit_price of products in the Products table.
+
+SELECT AVG(unit_price) AS AVG FROM products;
+
+-- Calculate the total quantity_sold from the Sales table
+
+SELECT SUM(qty_sold) AS total_qty FROM sales;
+
+-- sum Sales Per Day from the Sales tabl
+
+SELECT sales_date, SUM(total_price) FROM sales GROUP BY sales_date;
+
+-- Count Sales Per Day from the Sales tabl
+
+SELECT sales_date, COUNT(*) FROM sales GROUP BY sales_date;
+
+-- Retrieve product_name and unit_price from the Products table with the Highest Unit Price
+
+SELECT product_name, unit_price FROM products ORDER BY unit_price DESC limit 1;
+
+-- Retrieve the sale_id, product_id, and total_price from the Sales table for sales with a quantity_sold greater than 4.
+
+SELECT sales_id, product_id, total_price FROM sales WHERE qty_sold > 4;
+
+-- Retrieve the product_name and unit_price from the Products table, ordering the results by unit_price in descending order.
+
+SELECT product_name, unit_price FROM products ORDER BY unit_price DESC;
+
+-- Retrieve the total_price of all sales, rounding the values to two decimal places.
+
+select * from sales;
+
+SELECT ROUND(SUM(total_price) , 2) AS total_sales FROM sales;
+
+push git
