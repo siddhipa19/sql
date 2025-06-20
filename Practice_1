@@ -111,3 +111,45 @@ select * from sales;
 SELECT ROUND(SUM(total_price) , 2) AS total_sales FROM sales;
 
 push git
+
+-- 20.06.2025
+-- Calculate the average total_price of sales in the Sales table.
+
+SELECT AVG (total_price) FROM sales;
+
+-- Retrieve the sale_id and sale_date from the Sales table, formatting the sale_date as 'YYYY-MM-DD'.
+
+SELECT sales_id, DATE_FORMAT(sales_date,'%Y-%m-%d') AS 'sales date' FROM sales; 
+
+-- Calculate the total revenue generated from sales of products in the 'Electronics' category.
+
+SELECT SUM(sales.total_price) AS total_revenue FROM sales JOIN products ON sales.product_id = products.product_id WHERE category = "electronics";
+
+-- Retrieve the product_name and unit_price from the Products table, filtering the unit_price to show only values between $20 and $600.
+
+SELECT product_name, unit_price AS value FROM products WHERE unit_price BETWEEN 20 AND 600 ;
+
+-- Retrieve the product_name and category from the Products table, ordering the results by category in ascending order.
+
+SELECT product_name, category FROM products ORDER BY category ASC;
+
+-- Calculate the total quantity_sold of products in the 'Electronics' category.
+
+SELECT SUM(qty_sold) AS sold FROM sales JOIN products ON sales.product_id = products.product_id WHERE category = "electronics";
+
+-- Retrieve the product_name and total_price from the Sales table, calculating the total_price as quantity_sold multiplied by unit_price
+
+SELECT product_name, sales.qty_sold * products.unit_price AS TOTAL
+FROM sales
+JOIN products
+ON sales.product_id = products.product_id;
+
+-- Identify the Most Frequently Sold Product from Sales table
+
+SELECT product_id, COUNT(*) AS sales_count 
+FROM Sales 
+GROUP BY product_id 
+ORDER BY sales_count DESC 
+LIMIT 1;
+
+push git
