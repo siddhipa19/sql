@@ -1,5 +1,1 @@
-# sql
-
-USE sql_store;
-
-SELECT * FROM customers
+SQL Practice Question
