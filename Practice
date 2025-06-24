@@ -1,0 +1,117 @@
+CREATE DATABASE new;
+
+USE new;
+
+CREATE TABLE departments (
+  department_id INT PRIMARY KEY,
+  department_name VARCHAR(50)
+);
+
+CREATE TABLE employees (
+  emp_id INT PRIMARY KEY,
+  name VARCHAR(50),
+  department_id INT,
+  manager_id INT
+);
+
+CREATE TABLE projects (
+  project_id INT PRIMARY KEY,
+  project_name VARCHAR(100),
+  emp_id INT
+);
+
+-- Insert departments
+INSERT INTO departments VALUES
+(1, 'HR'),
+(2, 'IT'),
+(3, 'Finance'),
+(4, 'Marketing');
+
+-- Insert employees
+INSERT INTO employees VALUES
+(101, 'Alice', 1, NULL),
+(102, 'Bob', 2, 101),
+(103, 'Charlie', NULL, 101),
+(104, 'David', 1, 102),
+(105, 'Eve', 3, NULL);
+
+-- Insert projects
+INSERT INTO projects VALUES
+(1001, 'Recruitment Portal', 101),
+(1002, 'Network Upgrade', 102),
+(1003, 'Data Migration', 104),
+(1004, 'Marketing Site', NULL);
+
+-- List all employees with their department names.
+
+SELECT e.name , d.department_name
+FROM employees e
+JOIN departments d
+ON  e.department_id = d.department_id;
+
+-- List all employees, including those who don’t belong to any department
+
+SELECT e.name, d.department_name , emp_id
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id;
+
+-- List all departments, even those with no employees.
+
+SELECT d.department_name, e.name
+FROM employees e
+RIGHT JOIN departments d 
+ON e.department_id = d.department_id;
+
+-- List all employees and all departments, even if they don’t match.
+
+SELECT e.name AS emp, d.department_name as dept	
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id
+
+UNION
+
+SELECT e.name, d.department_name
+FROM employees e
+RIGHT JOIN departments d 
+ON e.department_id = d.department_id;
+
+-- Show each employee and their manager’s name.
+
+SELECT e.name AS emp,
+m.name AS manager
+FROM employees e 
+inner JOIN employees m
+ON e.emp_id = m.manager_id;
+
+-- List all projects with the employee name assigned to them.
+
+SELECT e.name, p.project_name
+FROM projects p
+JOIN employees e
+ON e.emp_id = p.emp_id;
+
+-- List all projects, even those not assigned to any employee.
+
+SELECT p.project_name, e.name
+FROM projects p 
+LEFT JOIN employees e 
+ON p.emp_id = e.emp_id;
+
+-- List employee name, department name, and project name. 
+
+SELECT e.name, d.department_name, p.project_name
+FROM employees e 
+LEFT join departments d ON e.department_id = d.department_id
+LEFT JOIN projects p ON e.emp_id = p.emp_id;
+
+-- List employees who are not assigned to any project.
+
+SELECT e.name
+FROM employees e
+LEFT JOIN projects p
+ON e.emp_id = p.emp_id
+WHERE p.emp_id IS NULL;
+
+git push
