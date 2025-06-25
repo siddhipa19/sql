@@ -1,0 +1,118 @@
+CREATE DATABASE practice1;
+
+USE practice1;
+
+-- students
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    email VARCHAR(100)
+);
+
+INSERT INTO students VALUES
+(1, 'Alice', 'alice@email.com'),
+(2, 'Bob', 'bob@email.com'),
+(3, 'Charlie', 'charlie@email.com'),
+(4, 'David', 'david@email.com');
+
+-- classes
+CREATE TABLE classes (
+    class_id INT PRIMARY KEY,
+    class_name VARCHAR(50),
+    teacher_id INT
+);
+
+INSERT INTO classes VALUES
+(101, 'Math', 1),
+(102, 'Science', 2),
+(103, 'History', NULL),
+(104, 'Art', 3);
+
+-- teachers
+CREATE TABLE teachers (
+    teacher_id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+INSERT INTO teachers VALUES
+(1, 'Mr. Smith'),
+(2, 'Ms. Johnson'),
+(3, 'Dr. Green');
+
+-- enrollments
+CREATE TABLE enrollments (
+    student_id INT,
+    class_id INT,
+    PRIMARY KEY (student_id, class_id)
+);
+
+INSERT INTO enrollments VALUES
+(1, 101),
+(1, 102),
+(2, 102),
+(3, 104);
+
+-- Count the total number of students.
+
+SELECT COUNT(*) AS total_students FROM students;
+
+-- Find the number of students enrolled in each class.
+
+SELECT c.class_name, COUNT(e.student_id) AS student_count
+FROM classes c
+LEFT JOIN enrollments e ON c.class_id = e.class_id
+GROUP BY c.class_name;
+
+-- Show the number of classes each student is enrolled in.
+
+SELECT s.name, COUNT(e.class_id) AS classes_enrolled
+FROM students s
+LEFT JOIN enrollments e ON s.student_id = e.student_id
+GROUP BY s.name;
+
+-- Show the average number of students per class.
+
+SELECT AVG(student_count) AS avg_students_per_class
+FROM (
+SELECT class_id, COUNT(student_id) AS student_count
+FROM enrollments
+GROUP BY class_id
+) AS sub;
+
+-- Show classes that have more than 1 student enrolled.
+
+SELECT c.class_name, COUNT(e.student_id) AS student_count
+FROM classes c
+JOIN enrollments e ON c.class_id = e.class_id
+GROUP BY c.class_name
+HAVING COUNT(e.student_id) > 1;
+
+-- Find students who have enrolled in the 'Math' class.
+SELECT s.name
+FROM students s
+JOIN enrollments e ON s.student_id = e.student_id
+JOIN classes c ON e.class_id = c.class_id
+WHERE c.class_name = 'Math';
+
+-- Show the total number of students enrolled in each class.
+
+SELECT c.class_name, COUNT(e.student_id) AS total_students
+FROM classes c
+LEFT JOIN enrollments e ON c.class_id = e.class_id
+GROUP BY c.class_name;
+
+-- show classes that have more than 2 students enrolled.
+
+SELECT c.class_name, COUNT(e.student_id) AS student_count
+FROM classes c
+JOIN enrollments e ON c.class_id = e.class_id
+GROUP BY c.class_name
+HAVING COUNT(e.student_id) > 2;
+
+-- List all students ordered by their names in ascending order.
+
+SELECT name
+FROM students
+ORDER BY name ASC;
+
+git push
