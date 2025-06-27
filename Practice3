@@ -116,3 +116,167 @@ FROM students
 ORDER BY name ASC;
 
 git push
+
+CREATE DATABASE P4;
+
+USE P4;
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    class VARCHAR(10),
+    age INT
+);
+
+CREATE TABLE teachers (
+    teacher_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    subject VARCHAR(30)
+);
+
+CREATE TABLE classes (
+    class_id INT PRIMARY KEY,
+    class_name VARCHAR(10),
+    teacher_id INT,
+    FOREIGN KEY (teacher_id) REFERENCES teachers(teacher_id)
+);
+
+CREATE TABLE marks (
+    mark_id INT PRIMARY KEY,
+    student_id INT,
+    subject VARCHAR(30),
+    marks INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
+
+-- Students
+INSERT INTO students VALUES
+(1, 'Alice', '10A', 15),
+(2, 'Bob', '10A', 16),
+(3, 'Charlie', '10B', 15),
+(4, 'David', '10B', 17);
+
+-- Teachers
+INSERT INTO teachers VALUES
+(101, 'Mr. Sharma', 'Math'),
+(102, 'Ms. Gupta', 'Science');
+
+-- Classes
+INSERT INTO classes VALUES
+(1, '10A', 101),
+(2, '10B', 102);
+
+-- Marks
+INSERT INTO marks VALUES
+(1, 1, 'Math', 78),
+(2, 1, 'Science', 85),
+(3, 2, 'Math', 92),
+(4, 2, 'Science', 80),
+(5, 3, 'Math', 88),
+(6, 3, 'Science', 90),
+(7, 4, 'Math', 70),
+(8, 4, 'Science', 75);
+
+SELECT * FROM students;
+
+-- Get names of students who are older than 15.
+
+SELECT name FROM students WHERE age > 15;
+
+-- Show the average marks in Science.
+SELECT AVG(marks) AS avg_science_marks
+FROM marks
+WHERE subject = 'Science';
+
+-- Show student names along with their Math marks.
+SELECT s.name, m.marks
+FROM students s
+JOIN marks m ON s.student_id = m.student_id
+WHERE m.subject = 'Math';
+
+-- Find the teacher name for class '10A'.
+SELECT t.name
+FROM classes c
+JOIN teachers t ON c.teacher_id = t.teacher_id
+WHERE c.class_name = '10A';
+
+-- Get the total marks scored by each student.
+SELECT s.name, SUM(m.marks) AS total_marks
+FROM students s
+JOIN marks m ON s.student_id = m.student_id
+GROUP BY s.name;
+
+SET SQL_SAFE_UPDATES = 0;
+-- Update age of student ‘Alice’ to 16.
+UPDATE students
+SET age = 16
+WHERE name = 'Alice';
+
+-- Delete records of students with age > 16.
+DELETE FROM students
+WHERE age > 16;
+
+-- Count number of students in each class.
+SELECT class, COUNT(*) AS student_count
+FROM students
+GROUP BY class;
+
+-- Display names of students who scored more than 85 in any subject.
+SELECT DISTINCT s.name
+FROM students s
+JOIN marks m ON s.student_id = m.student_id
+WHERE m.marks > 85;
+
+-- List all students with their total and average marks, sorted by highest total.
+SELECT 
+    s.name,
+    SUM(m.marks) AS total_marks,
+    AVG(m.marks) AS avg_marks
+FROM 
+    students s
+JOIN 
+    marks m ON s.student_id = m.student_id
+GROUP BY 
+    s.name
+ORDER BY 
+    total_marks DESC;
+    
+-- Show students who scored above average in Math.
+SELECT 
+    s.name, 
+    m.marks
+FROM 
+    marks m
+JOIN 
+    students s ON m.student_id = s.student_id
+WHERE 
+    m.subject = 'Math'
+    AND m.marks > (
+        SELECT AVG(marks) 
+        FROM marks 
+        WHERE subject = 'Math'
+    );
+    
+-- Find students who scored highest in each subject.
+SELECT 
+    m.subject,
+    s.name,
+    m.marks
+FROM 
+    marks m
+JOIN 
+    students s ON m.student_id = s.student_id
+WHERE 
+    (m.subject, m.marks) IN (
+        SELECT 
+            subject, MAX(marks)
+        FROM 
+            marks
+        GROUP BY 
+            subject
+    );
+
+
+
+
+git push
