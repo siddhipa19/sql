@@ -1,0 +1,100 @@
+CREATE DATABASE GOA;
+
+USE GOA;
+
+CREATE TABLE venues (
+  name TEXT,
+  phone TEXT,
+  latitude DOUBLE,
+  longitude DOUBLE,
+  address TEXT,
+  landmark TEXT,
+  city TEXT,
+  city_oid TEXT
+);
+
+-- DROP TABLE venues;
+
+
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('North Goa Area', '7387900979', 15.546597, 73.754861, 'Calangute, Baga, Arpora, Nagoa, Candolim, Sinquerim, Nerul Area', 'Pickup from hotel', '613268a86cab1e0016ea31ee');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Chapora River Point', '7020651596', 15.643917, 73.770674, 'Seascape Waterfront SW Agarwada, Chapora Goa', 'Seascape Waterfront SW Agarwada', '615435b4532ee10016b0bd9c');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Palolem Beach', '8552908068', 15.011456, 74.021447, 'Palolem Beach entrance. Near Palolem Beach Resort.', 'near Palolem Beach Resort', '61812fb6f123a7001675e41e');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Water Sports Point Baga Beach', '9673992899', 15.550805, 73.75328, 'Near OM cafe bar and restaurant. Baga - Calangute Beach', 'Near OM cafe bar and restaurant.', '613268a86cab1e0016ea31ee');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Miramar Jetty', '8668364188', 15.4833, 73.8092, 'Near Miramar Circle, Miramar Beach.', 'Near Miramar Circle', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Kayaking Point Chikali Goa', '+919892217936', 15.650249, 73.819856, 'Chopora River Mangroves Kayaking Point, Chikali - Goa', 'Chopora River Mangroves Kayaking Point', '61b57e484225cb0016286046');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Britona Jetty', '+919892217936', 15.517387, 73.845739, 'Britona, Penha de França, Goa 403101', 'Near Corporation Bank, House # 305 Bhousulo Waddo', '61b59dd84225cb001628605f');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Inox Panaji', '8888541285', 15.498767, 73.821066, 'INOX - Panaji & The Maquinez Palace', 'Dayanand Bandodkar Marg, Campal, Panaji Goa', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Maquinez Palace', '8322428113', 15.499656, 73.821366, 'Dayanand Bandodkar Road, Campal, Panjim Goa', 'The Entertainment Society Of Goa', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Dolphin Sightseeing Point', '8698001287', 15.499206, 73.786779, 'Dolphin Sightseeing point. Coco beach', 'Dolphin Sightseeing point. Coco beach', '626c07aa2a27c60016e86fcf');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Mandovi Cruises at Boat Cruise de Goa', '7821093701', 15.499663, 73.836496, 'Boat Cruise de Goa, Panaji', 'Mandovi Boat Cruise Jetty', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Coral Garden Malvan', '7821093701', 15.497802, 73.651377, 'Calangute, Baga, Arpora, Anjuna Petrol Pump, Hotel Green Park Mapusa, Candolim', 'Pickup from hotels in North Goa Area', '613268a86cab1e0016ea31ee');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('The ATV Club', '9823621264', 15.128626, 73.947554, 'Betul Sunset View Road, Canaguinim, Goa 403703', 'Betul Sunset View Road', '63933921a0cb1d0011a3a810');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Paliyem Paramotoring Point', '9168169111', 15.718925, 73.709302, 'Paliyem Hill Top, North Goa', 'Paliyem Hill Top', '63e733d52f4d2b001160ae96');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Hotel Shaurya', '9423532959', 15.505562, 73.861513, 'Ribander, patto, Panaji, Goa 403006', 'Patto Ribandar', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Hotel Goa Continental Baga', '9034126432', 15.57124, 73.765293, 'Hotel Goa Continental Baga, Hotel Goa Continental, Calangute - Anjuna Rd, near Baga, Arpora, Goa 403509', 'Calangute - Anjuna Rd,', '617984b8067dfa0016927e52');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Hotel Amani in Vagator Goa', '9923544344', 15.594506, 73.751761, 'Vagator Beach Rd, near Bharat Petroleum Pump, Anjuna, Goa', 'Near Bharat Petroleum Pump', '6269269eea42910016819067');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Tranquil Inn Calangute', '9607074054', 15.533281, 73.765552, 'House No 1/81D Gorbata Gaurawaddo Behind Decathlon mall, opposite Holiday Street, Calangute, Goa 403516', 'Behind Decathalon Mall', '613268a86cab1e0016ea31ee');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Paradise Cruise Jetty Point', '9673992899', 15.499839011189945, 73.83669255570082, 'Booth No. 1, Tourism Jetty, below the Mandovi Bridges, Panaji, Goa 403001', 'Captain of ports Panaji Goa', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Sairaj Beach Resort', '8055441233', 15.5402863, 73.7629869, 'No.166/13, Naikawaddo, Near Poriat Football Ground, Calangute, Goa 403516', 'Near Poriat Football Ground', '613268a86cab1e0016ea31ee');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Big Daddy Casino', '9112222854', 15.5012567, 73.8269311, 'Captain Of Ports Jetty, Dayanand Bandodkar Marg, Patto Colony, Panaji, Goa 403001', 'Captain Of Ports Jetty', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Calangute Beach', '7773950219', 15.5303218, 73.7595355, 'On Calangute Beach, Jukebox Ln, Gauravaddo, Calangute, Goa 403519', 'Juke Box Lane', '613268a86cab1e0016ea31ee');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Casino Pride', '7030900716', 15.5015397, 73.8276823, 'River Mandovi, Captain Of Ports Jetty, Panaji, Goa', 'Captain Of Ports Jetty', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Fontainhas Photoshoot Location', '9201974683', 15.494573579, 73.82957705, 'Latin Quarter, Fontainhas, Altinho Panaji, Goa 403001', 'Fontainhas Latin Quarter', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Bambolim Beach Photoshoot Location', '9201974683', 15.452628233106646, 73.84838132368039, 'Bambolim Beach, Bambolim - Panaji Goa', 'Near Grand Hyatt Resort Bambolim Goa', '62de774fe4b8450016303428');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Goa Rafting Meeting Point', '9545305734', 15.558860446278825, 74.16276100044504, 'Nagargaon, Ambedem, Goa 403506', 'The Cashew House In Nagargao', '61542dd7532ee10016b0bd80');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Calangute Photography Meetup Point', '9201974683', 15.549452069493856, 73.75346971819631, 'Calangute/Candolim/Baga Beach', 'Calangute/Candolim/Baga Beach', '613268a86cab1e0016ea31ee');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Vagator beach photography Meeting Point', '9201974683', 15.602985590905782, 73.73362730798587, 'Vagator Beach, Vagator North Goa', 'Vagator Beach', '6246e71c0ebc900016ee0007');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Bonderam Festival Point', '9049248689', 15.35383, 73.78228, 'Complete address for the event', 'Church Ground', '62a8213846650d0016b282bd');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Bhagwan Mahaveer Trek Meeting Point', '8379040418', 15.3757539, 74.2272652, 'NH 4A, Mollem, South Goa, 403410', 'HP petrol Pump', '62b95319d418b7001624c92b');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Great South Goa trek meeting point', '8379040418', 15.182198705703518, 73.9976999999955, 'Edapally - Panvel Hwy, Cuncolim, Goa 403703', 'Cuncolim Bus Stand', '650fcb71978b4c00114a4b1c');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Bagjuna Trek Meeting Point', '8379040418', 15.587713, 73.760301, 'Assagao Goa, 403509', 'Anjuna Mapusa Road Junction', '62e37425cbfda0001687cbfa');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Hidden Waterfall trek Rivona meeting point', '8379040418', 15.220564150669706, 74.08687416320923, 'Tilamol, Tilamola, Xeldem, Goa 403705', 'Tilamol Junction', '62bbf36f69b5db0016d95bb9');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Siddhanath Mountain trek meeting point', '8379040418', 15.257877216205083, 74.11054137445313, '7456+563, Ponda-Sanguem Rd junction, near Pimpal Tree, Kakoda, Vodlemol Cacora, Goa 403706', 'Chattrapati Shivaji Maharaj Statue', '650fcee3978b4c00114a4b21');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Off beat village trek keri meeting point', '8379040418', 15.029395958921162, 74.03294098946768, '22HM+J6X, Panvel - Kochi - Kanyakumari Hwy, Gudi, Canacona, Goa 403702', 'Aryadurga Service Station', '6124a099ebdb6b0016c70013');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('The green pool waterfall trek meeting point', '8379040418', 15.029402289538941, 74.03296197227746, '22HM+J6X, Panvel - Kochi - Kanyakumari Hwy, Gudi, Canacona, Goa 403702', 'Aryadurga Service Station', '6124a099ebdb6b0016c70013');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('The great north Goa sightseeing tour meeting point', '8379040418', 15.501194023216579, 73.91356009203069, 'Velha Goa, Ella, Goa 403110', 'Mahatma Gandhi Circle', '6185085942bad500163e3275');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Char dhabdhabe Trek meeting point', '8379040418', 15.532887231218455, 74.14139695362007, 'G4MR+5G5, Valpoi, Goa 403506', 'Valpoi ktc bus stand hall', '61542dd7532ee10016b0bd80');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('The Bhupra three fall meeting point', '8379040418', 15.029394492930152, 74.03297048977228, '22HM+J6X, Panvel - Kochi - Kanyakumari Hwy, Gudi, Canacona, Goa 403702', 'Aryadurga Service Station', '6124a099ebdb6b0016c70013');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Sightseeing tour of wonderful south Goa villages and heritage meeting point', '8379040418', 15.324761007534526, 73.98972333601016, 'Tembim Raia, Ponda Margoa, Highway, Raia, Goa 403718', 'Philus Supermarket', '62a71e2a6b3e9d001648a7af');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Satre trek meeting point', '8379040418', 15.532886954369845, 74.14138492581449, 'G4MR+5G5, Valpoi, Goa 403506', 'Valpoi ktc bus stand hall', '61542dd7532ee10016b0bd80');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Hidden south Goa greatest and most beautiful off beat beaches and cliff meeting point', '8379040418', 15.029396807102987, 74.03297621793213, '22HM+J6X, Panvel - Kochi - Kanyakumari Hwy, Gudi, Canacona, Goa 403702', 'Aryadurga Service Station', '6124a099ebdb6b0016c70013');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Harmal trek meeting point', '8379040418', 15.707694763419871, 73.69419289718923, 'PM5V+3MF, Querim - Tiracol, Querim, Goa 403524', 'Shri Ajoba Temple', '62249a6267593a0016b8eee8');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Cotigao hidden waterfall trek meeting point', '8379040418', 15.02940147866079, 74.03296217558604, '22HM+J6X, Panvel - Kochi - Kanyakumari Hwy, Gudi, Canacona, Goa 403702', 'Aryadurga Service Station', '6124a099ebdb6b0016c70013');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Trek to talde meeting point', '8379040418', 15.391702384445791, 74.12209987116829, '94RC+PV2, Panjim - Belagavi Rd, Dharbandora, Goa 403406', 'Dharbandora Village Panchayat', '62b95319d418b7001624c92b');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('North Goa island tour meeting point', '8379040418', 15.506599661596278, 73.9134361489117, 'GW47+J9J, Unnamed Road, Velha Goa, Goa 403110', 'Diver Ferry, Old Goa', '6185085942bad500163e3275');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Divar Island Boat Ride Point', '7057568847', 15.539846313511093, 73.90790643340308, 'Rd to Divar (North) Ferry Terminal, Malar, Sao Matias VP, Goa 403403', 'Opp. Mercure Goa Devaaya Resort Entrance', '62a8213846650d0016b282bd');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('All Blue Line and Red Line Locations as mentioned in the description', '9404755288', 15.497722266704066, 73.83394426456971, 'Paryatan Bhavan, Patto Centre, Panaji, Goa 403001', 'Bus start from Paryatan Bhavan Panaji', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Sea View Beach Resort', '8530676822', 15.55534525571086, 73.75378056955694, 'Sea View Beach Resort, Fiesta Road, Baga Goa', 'Near baga lane', '617984b8067dfa0016927e52');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Coconut Tree Road Photoshoot Meeting Point', '+919049248689', 15.5790685, 73.7835428, 'St. Annes Church Rd, Parra, Goa 403510', 'Coconut Tree Road Goa', '63776bd73e0e8d0011e7bf58');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Sinquerim Fort Photoshoot Location', '9049248689', 15.49845423596, 73.76635759690595, 'Sinquerim Fort, Sinquerim Goa', 'Sinquerim Fort', '62472fb40ca0b10016ccca40');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('The Panjim Post Office', '9049248689', 15.487523984330842, 73.82425446156603, 'The Panjim Post Office, Patto Colony, Panaji, Goa 403001', 'The Panjim Post Office', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Mae De Deus Church', '9049248689', 15.54703324297911, 73.78531220225113, 'Mae De Deus Church, Saligao', 'Mae De Deus Church', '61555693417a060016935a1e');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Ribandar Ferry Terminal', '9049248689', 15.50584313952198, 73.86565537478454, 'Ribandar - Chorao Ferry Terminal', 'Ribandar Goa', '6155a660d0aac20016310546');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Ribandar Ferry', '9049248689', 15.505922282174202, 73.86421418739594, 'Ribandar Ferry, National Highway 4A Bypass Road, Chimbel, Goa, India', 'Ribandar Ferry', '6155a660d0aac20016310546');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Holy Spirit Church', '9049248689', 15.28169270327372, 73.95907749997048, 'Holy Spirit Rd, Borda', 'Holy Spirit Church', '61545448532ee10016b0bdb9');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Villa Formosa', '9049248689', 15.261424189953527, 74.04483803046364, 'Villa Formosa, Chandor, Goa', 'Villa Formosa', '62a71bc56b3e9d001648a7a9');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Paradise Boat Cruise Jetty', '9049248689', 15.499948352904488, 73.83644156635442, 'Santa Monica Jetty, below Mandovi Bridge, patto, Panaji, Goa 403001', 'Captain Of Ports Panaji', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Club Cubana', '9823539000', 15.5798724, 73.7663572, 'Club Cubana, Aguada - Siolim Rd, Arpora, Goa 403507', 'Aguada - Siolim Rd, Arpora, Goa', '6269269eea42910016819067');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Scuba School GTDC Calangute Residency', '9209247825', 15.5457537, 73.7563728, 'GTDC Calangute Residency, Calalngute, Goa 403519', 'behind the reception in a blue tent like structure', '613268a86cab1e0016ea31ee');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Swastik Cruises', '8806344851', 15.5058059, 73.8255574, 'Betim Jetty, Alto- Betim Porvorim, Reis Magos, Goa 403521', 'Betim Jetty', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Goa Bungy North', '8750576508', 15.6725513, 73.9278521, 'Vadaval, latambercem, near Sal : 403504', 'sal', '62a2137d37f7100016d33078');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Nauti Amigo Luxury Cruises', '8806344851', 15.500763, 73.8282978, 'Mandovi River, 403001, opposite The Secretariat, Alto- Betim Porvorim, Panaji, Goa 403001', 'Panjim - North Goa', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Deltin Royale Casino', '9309138956', 15.5016153, 73.8258773, 'Fisheries Jetty, Fisheries Building, D. Bandodkar Road, Panaji, Goa 403001', 'Panjim - North Goa', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Silver Waves Cruises', '9209687124', 15.4998898, 73.8334726, 'Santa Monica jetty, Alto Porvorim, Penha de Franc, Panaji, Goa 403001', 'Panjim - North Goa', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('House of Black', '9763733268', 15.584895, 73.739113, 'Moyrah by Green Park, Anjuna, Goa', 'Anjuna Goa', '6228950b8b87ad0016651455');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Deltin Zuri', '9309138956', 15.2264442, 73.9294931, 'The Zuri White Sands, Goa Resort & Casino Pedda Varca, Salcete, South Goa, Goa 403721', 'Varca Goa', '667337ccbfd5120010fe69bc');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Deltin Jaqk', '9309138956', 15.5024376, 73.8248839, 'Noah''s Ark, RND Jetty, Dayanand Bandodkar Marg, Patto Colony, Panaji, Goa 403001', 'Panjim - North Goa', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Jumpin Heights Goa', '9022902354', 15.576231, 73.941069, 'Mayem Lake, district, Dicholi, Bhatwadi, Goa 403504', 'Bicholim Goa', '62a20f8d37f7100016d33072');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Samrat Cruise', '7385404718', 15.5013585, 73.8264048, 'Captain of ports jetty, Patto Colony, Panaji, Goa 403001', 'Panjim - North Goa', '6124998bebdb6b0016c70010');
+INSERT INTO venues (name, phone, latitude, longitude, address, landmark, city_oid) VALUES ('Abhi Kayaks and Boat Trip', '8766929674', 15.0041359, 74.0268351, 'Colomb, beach, Palolem, Goa, 403702', 'Palolem Goa', '61812fb6f123a7001675e41e');
+
+
+SELECT * FROM venues;
+
+SELECT * FROM venues WHERE name LIKE '%Hotel%';
+
+SELECT *FROM venues WHERE latitude BETWEEN 10 AND 20;
+
+SELECT * FROM venues WHERE address LIKE '%Baga%';
+
+push git
